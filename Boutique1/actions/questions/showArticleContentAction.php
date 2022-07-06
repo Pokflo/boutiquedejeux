@@ -2,23 +2,23 @@
 
 require('actions/database.php');
 
-// Verifier si l'id de la question est rentrée dans l'URL
+// Verifier si l'id de l'article est rentrée dans l'URL
 if(isset($_GET['id']) && !empty($_GET['id'])){
 
-    // Recupérer l'identifiant de la question
+    // Recupérer l'identifiant de l'article
     $idOfTheQuestion = $_GET['id'];
 
-    // Verifier si la question existe
+    // Verifier si l'article existe
     $checkIfQuestionExists = $bdd->prepare('SELECT * FROM articles WHERE id = ?');
     $checkIfQuestionExists->execute(array($idOfTheQuestion));
 
     if($checkIfQuestionExists->rowCount() > 0) {
 
-        // Récupérer toutes les données de la question
+        // Récupérer toutes les données de l'article
         $questionsInfos = $checkIfQuestionExists->fetch();
 
 
-        // Stocker les données de la question dans des variables
+        // Stocker les données de l'article dans des variables
         $question_title = $questionsInfos['titre'];
         $question_content = $questionsInfos['contenu'];
         $question_id_author = $questionsInfos['id_auteur'];
@@ -26,9 +26,9 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
         $question_publication_date = $questionsInfos['date_publication'];
 
     } else {
-        $errorMsg = "Aucune question n'a été trouvée";
+        $errorMsg = "Aucun article n'a été trouvée";
     }
 
 } else {
-    $errorMsg = "Aucune question n'a été trouvée";
+    $errorMsg = "Aucun article n'a été trouvée";
 }

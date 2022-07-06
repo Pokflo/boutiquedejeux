@@ -2,19 +2,19 @@
 
 require('actions/database.php');
 
-// Verifier si l'id de la question est bien passer en parametre dans l'url
+// Verifier si l'id de l'article est bien passer en parametre dans l'url
 if(isset($_GET['id']) && !empty($_GET['id'])){
 
     $idOfQuestion = $_GET['id'];
 
-    // Verifier si la question existe
+    // Verifier si l'article existe
     $checkIfQuestionExists = $bdd->prepare('SELECT * FROM articles WHERE id = ?');
     $checkIfQuestionExists->execute(array($idOfQuestion));
 
     if($checkIfQuestionExists->rowCount() > 0){
 
 
-        // Recuperer les données de la question
+        // Recuperer les données de l'article
         $questionInfos = $checkIfQuestionExists->fetch();
         if($questionInfos['id_auteur'] == $_SESSION['id']){
 
@@ -27,13 +27,13 @@ if(isset($_GET['id']) && !empty($_GET['id'])){
             $question_content = str_replace('<br />', '', $question_content);
 
         } else {
-            $errorMsg = "Vous n'êtes pas l'auteur de cette question !";
+            $errorMsg = "Vous n'êtes pas l'auteur de cette article !";
         }
 
     } else {
-        $errorMsg = "Aucune question n'a été trouvée";
+        $errorMsg = "Aucun article n'a été trouvée";
     }
 
 } else {
-    $errorMsg = "Aucune question n'a été trouvée";
+    $errorMsg = "Aucun article n'a été trouvée";
 }

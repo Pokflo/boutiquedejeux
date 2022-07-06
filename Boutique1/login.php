@@ -15,6 +15,7 @@
     <div class="container">
       <div class="row100">
      <div class="col">
+        <p>Pseudo</p>
          <div class="inputBox">
              <input type="text" name="pseudo" required="required">
              <span class="text">Pseudo</span>
@@ -23,6 +24,7 @@
        </div>
       <div class="row100">
      <div class="col">
+     <p>Mot de passe</p>
          <div class="inputBox">
              <input type="text" name="password" required="required">
              <span class="text">Password</span>

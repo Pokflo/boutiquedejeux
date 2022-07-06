@@ -8,24 +8,35 @@ require('actions/questions/showAllQuestionsAction.php');
 <link rel="stylesheet" href="assets/image.css">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="assets/footer.css">
+<link rel="stylesheet" href="assets/glow.css">
 <body>
 <?php include 'includes/navbar.php'; ?>
 <br><br>
+<div class="glow">
+    <h1>Bonjour, Bienvenue sur le site XENOFEAR site de vente de jeux vidéo en ligne</h1>
 
-<div class="container">
+    <hr>
+
+    <p>Voici un eventail de nos produits vendu par nos utilisateurs : </p>
+
+    <hr>
+</div>
+
+<div class="container col-sm">
     <?php 
     while($question = $getAllQuestions->fetch()){
         ?>
+        
         <div class="card">
-            <div class="card-header">
+            <div class="card-header ">
            <a href="article.php?id=<?= $question['id']; ?>">
-                <?= $question['titre']; ?></a>
+                <?= $question['titre'] .' :' ?></a>
             </div>
             <div class="card-body">
             <?= $question['description']; ?>
             </div>
             <div class="card-body">
-            <p> Prix de vente : <?= $question['contenu']; ?></p>
+            <p> Prix de vente : <?= $question['contenu']; ?> €</p>
             </div>
             <div class="image-article">
                 <?= '<img src="data:image/png|image/jpeg|image/gif|image/jpg;base64,' . base64_encode( $question['bin'] ) . '" />'; ?>
@@ -38,6 +49,7 @@ require('actions/questions/showAllQuestionsAction.php');
             Publié par <?= $question['pseudo_auteur']; ?> le <?= $question['date_publication']; ?>
             </div>
         </div>
+        
             
     <?php
     }

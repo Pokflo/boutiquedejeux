@@ -21,16 +21,20 @@ require('actions/questions/showAllAnswersOfQuestionAction.php');
                 if(isset($question_publication_date) && ($_SESSION['auth'])){
                 ?>
                     <section class="show-content">
+                    
+                        <h1>Nom du jeu :</h1>
                         <h3>
-                            <?= $question_title; ?>
+                            <?= '<br>'.$question_title; ?>
                         </h3>
                         <hr>
                         <p>
-                            <?= $question_content; ?>
+                            Prix de vente :<br>
+                            <?= $question_content;?> Є
                         <p>
                         <hr>
                         <small>
-                            <?= $question_pseudo_author . ' ' . $question_publication_date; ?>
+                            
+                            <?= 'Utilisateur :'.' '.$question_pseudo_author .'<br>'. ' Mis en ligne le : ' . $question_publication_date; ?>
                         </small>
                     </section>
                     <br>
@@ -38,10 +42,10 @@ require('actions/questions/showAllAnswersOfQuestionAction.php');
 
                         <form class="form-group" method="POST">
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Réponse :</label>
+                                <label for="exampleInputEmail1" class="form-label">Commentaire :</label>
                                 <textarea name="answer"class="form-control"></textarea>
                                 <br>
-                                <button class="btn btn-primary" type="submit" name="validate">Répondre</button>
+                                <button class="btn btn-primary" type="submit" name="validate">Poster</button>
                             </div>
                         </form>
 

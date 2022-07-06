@@ -4,7 +4,14 @@
     background-image: url("images/footer_img.gif");
     background-repeat: no-repeat;
     background-size: cover;
-    color: white;
+    color: rgb(115, 217, 243);
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Pacifico', cursive;
+    font-family: 'Gentium Book Plus', serif;
 }
 
 .liAll {
@@ -18,3 +25,11 @@
     width: 20%!important;
 }
 
+a {
+    text-decoration: none;
+}
+
+.rien {
+    width: 50px;
+    height: 50px;
+}

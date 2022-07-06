@@ -16,7 +16,7 @@ if(isset($_POST['validate'])){
         $new_question_image = file_get_contents($_FILES['picture']['tmp_name']);
 
 
-        // Modifier les informations de la question qui posséde l'id rentré en paramètre dans l'url
+        // Modifier les informations de l'article qui posséde l'id rentré en paramètre dans l'url
         $editQuestionOnWebsite = $bdd->prepare('UPDATE articles SET titre = ?, description = ?, contenu = ?, bin = ? WHERE id = ?');
         $editQuestionOnWebsite->execute(array($new_question_title, $new_question_description, $new_question_content, $new_question_image, $idOfQuestion));
 

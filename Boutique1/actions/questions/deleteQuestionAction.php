@@ -10,34 +10,34 @@ require('../database.php');
 // Sert a verifier si la variable est declarer
 if(isset($_GET['id']) && !empty($_GET['id'])){
     
-    // l'id de la question en parametre
+    // l'id de l'article en parametre
     $idOfTheQuestion = $_GET['id'];
 
-    // Verifier si la question existe
+    // Verifier si l'article existe
     $checkIfQuestionExists = $bdd->prepare('SELECT id_auteur FROM articles WHERE id = ?');
     $checkIfQuestionExists->execute(array($idOfTheQuestion));
 
     if($checkIfQuestionExists->rowCount() > 0){
 
-        // Recuperer les infos de la question
+        // Recuperer les infos de l'article
         $questionsInfos = $checkIfQuestionExists->fetch();
         if($questionsInfos['id_auteur'] == $_SESSION['id']){
 
-            // Supprimer la question en fonction de son id rentré en paramétre
+            // Supprimer l'article en fonction de son id rentré en paramétre
             $deleteThisQuestion = $bdd->prepare('DELETE FROM articles WHERE id = ?');
             $deleteThisQuestion->execute(array($idOfTheQuestion));
 
-            // Rediriger l'utilisateur vers ses questions
+            // Rediriger l'utilisateur vers ses jeux
             header('Location: ../../my-questions.php');
 
         } else {
-            echo "Vous n'avez pas le droit de supprimer une question qui ne vous appartient pas !";
+            echo "Vous n'avez pas le droit de supprimer un jeu qui ne vous appartient pas !";
         }
 
     } else {
-        echo "Aucune question n'a été trouvée";
+        echo "Aucun jeu n'a été trouvée";
     }
 
 } else {
-    echo "Aucune question n'a été trouvée";
+    echo "Aucun jeu n'a été trouvée";
 }

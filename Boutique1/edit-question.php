@@ -39,7 +39,7 @@ require('actions/questions/editQuestionAction.php');
             <?= '<img src="data:image/png|image/jpeg|image/gif|image/jpg;base64,' . base64_encode( $question_image ) . '" />'; ?>
                 </div>
             <br><br>
-                <button type="submit" class="btn btn-primary" name="validate">Modifier la question</button>
+                <button type="submit" class="btn btn-primary" name="validate">Modifier l'article</button>
             </form>
             </div> 
             <?php

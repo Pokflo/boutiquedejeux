@@ -8,7 +8,7 @@ if(isset($_POST['validate'])){
     // Verifier si les champs ne sont pas vides
     if(!empty($_POST['title']) && !empty($_POST['description']) && !empty($_POST['content']) && !empty($_FILES['picture'])){
         
-        // les données de la question
+        // les données de l'article
         $question_title = htmlspecialchars($_POST['title']);
         $question_description = nl2br(htmlspecialchars($_POST['description']));
         $question_content = nl2br(htmlspecialchars($_POST['content']));
@@ -20,7 +20,7 @@ if(isset($_POST['validate'])){
         $question_id_author = $_SESSION['id'];
         $question_pseudo_author = $_SESSION['pseudo'];
         
-        // Inserer la question sur la question
+        // Inserer l'article dans le menu
         $insertQuestionOnWebsite = $bdd->prepare('INSERT INTO articles(titre, description, contenu, nom_image, image_taille, type_image, bin, id_auteur, pseudo_auteur, date_publication)VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
         $insertQuestionOnWebsite->execute(
             array(

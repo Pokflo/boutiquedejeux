@@ -3,17 +3,22 @@
     width: 100%;
     height: auto;
     /* border: 1px solid #333; */
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(3, 300px);
     justify-content: center;
     align-items: center;
     align-content: center;
     grid-gap: 50px;
+    text-decoration: none;
+    font-family: 'Gentium Book Plus', serif;
 }
 
 .card {
     width: 300px;
+    text-decoration: none !important;
+    
 }
+
 
 body {
     background-image: url("images/bg03.jpg") ;

@@ -7,9 +7,16 @@ require('actions/users/signupAction.php');
 <head>
   <link rel="stylesheet" href="assets/body.css">
   <link rel="stylesheet" href="assets/Form.css">
-</head>  
+  <link rel="stylesheet" href="assets/footer.css">
+  <link rel="stylesheet" href="assets/glow.css">
+</head>
+<?php include 'includes/navbar.php'; ?>  
 <body>
-
+<div class="glow">
+  <hr>
+  <h1>Inscription</h1>
+  <hr>
+</div>
     <?php if(isset($errorMsg)){echo '<p>'.$errorMsg.'</p>';} ?>
     
     <div class='container'>
@@ -45,7 +52,7 @@ require('actions/users/signupAction.php');
   
 </form> 
     </div>
-   
+    <?php include 'includes/footer.php';?>
 </body>
 </html>
 
