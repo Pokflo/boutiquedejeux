@@ -1,0 +1,22 @@
+.container {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    /* border: 1px solid #333; */
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    grid-gap: 50px;
+}
+
+.card {
+    width: 300px;
+}
+
+body {
+    background-image: url("images/bg03.jpg") ;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,20 @@
+.containerf {
+    flex-direction: row;
+    display: flex;
+    background-image: url("images/footer_img.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.liAll {
+    display: flex;
+    flex-direction: row!important;
+    flex-wrap: nowrap!important;
+
+}
+
+.footerAll {
+    width: 20%!important;
+}
+
